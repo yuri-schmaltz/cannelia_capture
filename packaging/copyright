@@ -1,0 +1,22 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: Cannelia Capture
+Source: https://github.com/yuri-schmaltz/cannelia-capture
+
+Files: *
+Copyright: 2026 yuri-schmaltz (modifications, packaging and new components)
+           Linux Mint / Cinnamon contributors, including Michael Webster and Cobinja
+License: GPL-2+
+ The program is free software: you can redistribute it and/or modify it
+ under the terms of the GNU General Public License as published by the
+ Free Software Foundation, either version 2 of the License, or (at your
+ option) any later version.
+ .
+ This program is distributed WITHOUT ANY WARRANTY; without even the
+ implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ .
+ On Debian systems, the complete text of the GNU General Public License
+ version 2 can be found in /usr/share/common-licenses/GPL-2.
+ .
+ Original source: linuxmint/cinnamon, revision
+ d67b361f90bccc3346fe342b2a571b68ec1eb671. See NOTICE.md and AUTHORS.md
+ for provenance, modifications and upstream attribution.

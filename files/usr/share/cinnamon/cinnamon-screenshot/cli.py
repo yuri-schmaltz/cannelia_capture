@@ -3,7 +3,7 @@
 # Derived components: Linux Mint / Cinnamon contributors. See NOTICE.md.
 """Command line parsing without loading GTK or screenshot services."""
 import argparse
-from branding import APP_NAME
+from branding import APP_NAME, VERSION
 
 
 def build_arg_parser():
@@ -12,6 +12,7 @@ def build_arg_parser():
         description='Take screenshots of your screen, windows, or selected areas',
         add_help=True,
     )
+    parser.add_argument('--version', action='version', version=f'{APP_NAME} {VERSION}')
     parser.add_argument('-c', '--clipboard', action='store_true',
                         help='Send the grab directly to the clipboard')
     parser.add_argument('-w', '--window', action='store_true',

@@ -1,5 +1,14 @@
 # Histórico de versões
 
+## 1.0.0 — 2026-10-28
+
+- Primeira release pública com pacote Debian independente (`Architecture: all`).
+- Comando `cannelia-capture`, entrada no menu e ícone próprio do pacote.
+- Tradução pt-BR e schema compilados durante o empacotamento.
+- Preferências compartilhadas com a instalação por usuário existente.
+- `--version`, instruções de instalação/remoção e build reproduzível do `.deb`.
+- Dependências declaradas para instalação pelo APT; licença e créditos incluídos.
+
 ## 0.1.0 — 2026-10-28
 
 Primeira versão independente do **Cannelia Capture**, derivada do

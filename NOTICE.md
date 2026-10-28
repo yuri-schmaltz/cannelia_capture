@@ -1,6 +1,6 @@
 # Licença, origem e avisos
 
-**Cannelia Capture 0.1.0** é distribuído sob a **GNU General Public License,
+**Cannelia Capture 1.0.0** é distribuído sob a **GNU General Public License,
 versão 2 ou, a seu critério, qualquer versão posterior** (`GPL-2.0-or-later`).
 O texto integral da GPL v2 está em [LICENSE](LICENSE) e [COPYING](COPYING).
 Esses textos não foram alterados. Não há licença MIT ou proprietária adicional.
@@ -37,7 +37,8 @@ Veja [docs/CHANGES.md](docs/CHANGES.md) para uma descrição das modificações 
 [AUTHORS.md](AUTHORS.md) para os créditos.
 
 Os ícones incluídos neste repositório são derivados dos ícones distribuídos
-com o aplicativo Cinnamon e seguem a licença do código de origem. O tema e
+com o aplicativo Cinnamon e seguem a licença do código de origem. O ícone `packaging/cannelia-capture.svg` é original de yuri-schmaltz (2026),
+sob GPL-2.0-or-later, e acompanha o pacote Debian. O tema e
 o ícone `applets-screenshooter` utilizados em tempo de execução pertencem
 à instalação do usuário e não são copiados pelo instalador.
 

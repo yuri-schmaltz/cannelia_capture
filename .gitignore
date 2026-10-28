@@ -10,3 +10,4 @@ venv/
 *.core
 core
 .DS_Store
+dist/

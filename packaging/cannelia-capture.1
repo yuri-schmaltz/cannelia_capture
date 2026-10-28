@@ -1,0 +1,65 @@
+.TH CANNELIA-CAPTURE 1 "October 2026" "Cannelia Capture" "User Commands"
+.SH NAME
+cannelia-capture \- capture screens, windows and regions on Cinnamon
+.SH SYNOPSIS
+.B cannelia-capture
+.RI [ options ]
+.SH DESCRIPTION
+Capture screenshots with automatic saving, clipboard integration and an
+interactive editor. Linux Mint with Cinnamon on X11 is the validated environment.
+.SH OPTIONS
+.TP
+.BR \-i ", " \-\-interactive
+Open the graphical interface.
+.TP
+.BR \-a ", " \-\-area
+Select a rectangular region.
+.TP
+.BR \-w ", " \-\-window
+Capture the active window.
+.TP
+.B \-\-select-window
+Pick a window interactively, when supported by the compositor.
+.TP
+.BI \-\-monitor " INDEX"
+Capture a monitor by zero-based index.
+.TP
+.BR \-c ", " \-\-clipboard
+Send the capture directly to the clipboard.
+.TP
+.BR \-p ", " \-\-include-pointer
+Include the mouse pointer, when supported.
+.TP
+.BR \-s ", " \-\-include-shadow
+Include the window shadow, when supported.
+.TP
+.BI \-\-delay " SECONDS"
+Wait before capturing.
+.TP
+.BI \-\-file " PATH"
+Save to the specified path.
+.TP
+.B \-\-check
+Check the backend and dependencies without capturing.
+.TP
+.B \-\-profile
+Print elapsed save time as JSON on standard error.
+.TP
+.B \-\-no-notification
+Disable desktop notifications.
+.TP
+.B \-\-version
+Print the product name and version.
+.TP
+.BR \-h ", " \-\-help
+Print all command-line options.
+.SH FILES
+Preferences are stored in the cinnamon-screenshot-local directory beneath
+XDG_CONFIG_HOME (by default ~/.config). Captures default to the user's Pictures
+folder. Use the Preferences dialog to change the destination and capture options.
+.SH AUTHORS
+Linux Mint / Cinnamon contributors and yuri-schmaltz.
+.SH COPYRIGHT
+GPL version 2 or later. See /usr/share/doc/cannelia-capture/copyright.
+.SH SEE ALSO
+https://github.com/yuri-schmaltz/cannelia-capture

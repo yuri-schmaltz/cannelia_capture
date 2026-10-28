@@ -1,0 +1,9 @@
+<!-- SPDX-License-Identifier: GPL-2.0-or-later; Copyright 2026 yuri-schmaltz -->
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <rect x="8" y="8" width="112" height="112" rx="24" fill="#76b43a"/>
+  <g fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M44 32H32v12m52-12h12v12M32 84v12h12m40 0h12V84"/>
+    <rect x="42" y="45" width="44" height="34" rx="5"/>
+    <circle cx="64" cy="62" r="9"/>
+  </g>
+</svg>

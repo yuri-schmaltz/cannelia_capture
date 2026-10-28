@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Cannelia Capture
+Comment=Capture your screen, windows or regions
+Comment[pt_BR]=Capture telas, janelas ou regiões
+Exec=cannelia-capture --interactive
+Icon=cannelia-capture
+Terminal=false
+Categories=GTK;Utility;
+StartupNotify=false

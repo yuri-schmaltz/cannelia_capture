@@ -2,7 +2,7 @@
 # Cannelia Capture translations (C) 2026 yuri-schmaltz.
 msgid ""
 msgstr ""
-"Project-Id-Version: Cannelia Capture 0.1.0\n"
+"Project-Id-Version: Cannelia Capture 1.0.0\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"

@@ -1,4 +1,4 @@
-# Cannelia Capture
+# Cannelia Capture 1.0.0
 
 Captura de tela para **Linux Mint e Cinnamon**, com salvamento automático,
 área de transferência, recorte ajustável e interface em português brasileiro.
@@ -45,7 +45,64 @@ o cursor em uma região dependem do serviço novo. A opção de sombra fica
 desabilitada quando indisponível. O app não implementa um portal genérico
 de captura para outros desktops Wayland.
 
-## Instalação
+## Instalação pelo pacote Debian (recomendado)
+
+Baixe `cannelia-capture_1.0.0_all.deb` na
+[release v1.0.0](https://github.com/yuri-schmaltz/cannelia-capture/releases/tag/v1.0.0).
+No diretório do download, execute:
+
+```bash
+sudo apt install ./cannelia-capture_1.0.0_all.deb
+cannelia-capture --interactive
+cannelia-capture --version
+```
+
+O APT instala as dependências. O pacote é `all` (Python, sem código nativo
+embutido); o ambiente funcional validado continua sendo Mint 22.3/Cinnamon/X11.
+Abra também **Cannelia Capture** pelo menu. O pacote instala em `/usr/share/cannelia-capture`,
+sem substituir componentes do Cinnamon, e inclui traduções, schema, créditos e licença.
+Verifique o download com o `SHA256SUMS` disponibilizado na release:
+
+```bash
+sha256sum -c SHA256SUMS
+```
+
+O pacote não altera atalhos pessoais durante a instalação. Em **Configurações do
+Sistema → Teclado → Atalhos personalizados**, associe Super + Shift + A/S/D a
+`cannelia-capture`, `cannelia-capture --area` e `cannelia-capture --window`, respectivamente.
+
+Se já usa o instalador por usuário abaixo, as preferências em
+`~/.config/cinnamon-screenshot-local` são compartilhadas. Para evitar duas entradas
+no menu, remova a instalação antiga com `./install-screenshot.py --uninstall`
+antes de configurar os novos atalhos; essa remoção preserva suas preferências e
+restaura os atalhos anteriores ainda gerenciados pelo instalador.
+Os exemplos com `~/.local/bin/cinnamon-screenshot-local` deste documento
+podem ser usados com o pacote substituindo o comando por `cannelia-capture`.
+
+Para atualizar, instale o `.deb` novo com `sudo apt install ./arquivo.deb`.
+Para remover, use `sudo apt remove cannelia-capture`. Preferências e capturas
+pessoais são preservadas, inclusive com `apt purge`.
+
+### Construir o pacote a partir do código-fonte
+
+```bash
+sudo apt install git python3 gettext libglib2.0-bin desktop-file-utils dpkg-dev
+/usr/bin/python3 tools/build-deb.py
+```
+
+O arquivo aparece em `dist/`. O build não usa sudo, não instala o aplicativo e
+não acessa credenciais. `SOURCE_DATE_EPOCH` controla os horários; por padrão,
+é usado o commit atual. Com a mesma árvore, ferramentas e valor dessa variável,
+o pacote é reproduzível. Para verificar o pacote e o lançamento extraído (com as dependências de execução
+instaladas e uma sessão gráfica ativa):
+
+```bash
+sudo apt install lintian
+lintian dist/cannelia-capture_1.0.0_all.deb
+/usr/bin/python3 tests/test-deb.py
+```
+
+## Instalação por usuário a partir do código-fonte
 
 Use o Python do sistema para ter acesso ao GTK e às bibliotecas do Mint.
 Não é necessário compilar ou reinstalar o desktop Cinnamon.

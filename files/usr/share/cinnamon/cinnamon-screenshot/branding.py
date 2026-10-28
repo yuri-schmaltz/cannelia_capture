@@ -3,5 +3,5 @@
 # Derived components: Linux Mint / Cinnamon contributors. See NOTICE.md.
 """Public product name; settings and service identifiers remain compatible."""
 APP_NAME = 'Cannelia Capture'
-VERSION = '0.1.0'
+VERSION = '1.0.0'
 PROJECT_URL = 'https://github.com/yuri-schmaltz/cannelia-capture'
