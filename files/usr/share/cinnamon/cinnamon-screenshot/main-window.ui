@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SPDX-License-Identifier: GPL-2.0-or-later; Cannelia Capture modifications 2026-10-28. See NOTICE.md. -->
+<interface domain="cinnamon-screenshot-local">
+  <requires lib="gtk+" version="3.24" />
+  <object class="GtkWindow" id="window">
+    <property name="title">Cannelia Capture</property>
+    <property name="default-width">560</property>
+    <property name="default-height">-1</property>
+    <property name="icon-name">applets-screenshooter</property>
+    <child>
+      <object class="GtkBox" id="main_box">
+        <property name="visible">True</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">16</property>
+        <property name="margin">18</property>
+        <child>
+          <object class="GtkInfoBar" id="service_infobar">
+            <property name="visible">True</property>
+            <property name="no-show-all">True</property>
+            <property name="message-type">warning</property>
+            <property name="revealed">False</property>
+            <child internal-child="content_area">
+              <object class="GtkBox" id="service_content">
+                <property name="visible">True</property>
+                <child>
+                  <object class="GtkLabel" id="service_infobar_label">
+                    <property name="visible">True</property>
+                    <property name="label" translatable="yes">Some capture modes are unavailable.</property>
+                    <property name="wrap">True</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox" id="mode_box">
+            <property name="visible">True</property>
+            <property name="homogeneous">True</property>
+            <property name="spacing">8</property>
+            <child>
+              <object class="GtkRadioButton" id="mode_screen">
+                <property name="visible">True</property>
+                <property name="draw-indicator">False</property>
+                <property name="can-focus">True</property>
+                <property name="tooltip-text" translatable="yes">Capture all monitors</property>
+                <property name="active">True</property>
+                <child>
+                  <object class="GtkBox" id="mode_content_screen">
+                    <property name="visible">True</property>
+                    <property name="orientation">vertical</property>
+                    <property name="spacing">8</property>
+                    <property name="margin">6</property>
+                    <child>
+                      <object class="GtkImage" id="mode_icon_screen">
+                        <property name="visible">True</property>
+                        <property name="icon-name">cinnamon-screenshot-display-symbolic</property>
+                        <property name="pixel-size">24</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="mode_label_screen">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">Entire screen</property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkRadioButton" id="mode_monitor">
+                <property name="visible">True</property>
+                <property name="draw-indicator">False</property>
+                <property name="can-focus">True</property>
+                <property name="tooltip-text" translatable="yes">Capture the current monitor</property>
+                <property name="group">mode_screen</property>
+                <child>
+                  <object class="GtkBox" id="mode_content_monitor">
+                    <property name="visible">True</property>
+                    <property name="orientation">vertical</property>
+                    <property name="spacing">8</property>
+                    <property name="margin">6</property>
+                    <child>
+                      <object class="GtkImage" id="mode_icon_monitor">
+                        <property name="visible">True</property>
+                        <property name="icon-name">cinnamon-screenshot-display-symbolic</property>
+                        <property name="pixel-size">24</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="mode_label_monitor">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">Monitor</property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkRadioButton" id="mode_window">
+                <property name="visible">True</property>
+                <property name="draw-indicator">False</property>
+                <property name="can-focus">True</property>
+                <property name="tooltip-text" translatable="yes">Capture the active window</property>
+                <property name="group">mode_screen</property>
+                <child>
+                  <object class="GtkBox" id="mode_content_window">
+                    <property name="visible">True</property>
+                    <property name="orientation">vertical</property>
+                    <property name="spacing">8</property>
+                    <property name="margin">6</property>
+                    <child>
+                      <object class="GtkImage" id="mode_icon_window">
+                        <property name="visible">True</property>
+                        <property name="icon-name">cinnamon-screenshot-window-symbolic</property>
+                        <property name="pixel-size">24</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="mode_label_window">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">Window</property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkRadioButton" id="mode_area">
+                <property name="visible">True</property>
+                <property name="draw-indicator">False</property>
+                <property name="can-focus">True</property>
+                <property name="tooltip-text" translatable="yes">Capture a selected area</property>
+                <property name="group">mode_screen</property>
+                <child>
+                  <object class="GtkBox" id="mode_content_area">
+                    <property name="visible">True</property>
+                    <property name="orientation">vertical</property>
+                    <property name="spacing">8</property>
+                    <property name="margin">6</property>
+                    <child>
+                      <object class="GtkImage" id="mode_icon_area">
+                        <property name="visible">True</property>
+                        <property name="icon-name">cinnamon-screenshot-selection-symbolic</property>
+                        <property name="pixel-size">24</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="mode_label_area">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">Region</property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox" id="capture_row">
+            <property name="visible">True</property>
+            <property name="spacing">12</property>
+            <child>
+              <object class="GtkButton" id="take_button">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Capture</property>
+                <property name="hexpand">True</property>
+                <property name="height-request">44</property>
+                <style>
+                  <class name="suggested-action" />
+                </style>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+              </packing>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox" id="preview_section">
+            <property name="no-show-all">True</property>
+            <property name="orientation">vertical</property>
+            <property name="spacing">10</property>
+            <child>
+              <object class="GtkStack" id="preview_stack">
+                <property name="visible">True</property>
+                <property name="homogeneous">False</property>
+                <child>
+                  <object class="GtkLabel" id="placeholder_label">
+                    <property name="visible">True</property>
+                    <property name="label" translatable="yes">Ready to capture</property>
+                  </object>
+                  <packing>
+                    <property name="name">placeholder</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkScrolledWindow" id="preview_scroll">
+                    <property name="visible">True</property>
+                    <property name="hexpand">True</property>
+                    <property name="vexpand">True</property>
+                    <property name="min-content-height">280</property>
+                    <property name="shadow-type">in</property>
+                    <child>
+                      <object class="GtkDrawingArea" id="preview_area">
+                        <property name="visible">True</property>
+                        <property name="hexpand">True</property>
+                        <property name="vexpand">True</property>
+                      </object>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="name">preview</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkBox" id="edit_bar">
+                <property name="visible">True</property>
+                <property name="spacing">6</property>
+                <child>
+                  <object class="GtkButton" id="crop_button">
+                    <property name="visible">True</property>
+                    <property name="label" translatable="yes">Crop</property>
+                    <property name="tooltip-text" translatable="yes">Crop to selection</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton" id="undo_button">
+                    <property name="visible">True</property>
+                    <property name="label" translatable="yes">Undo</property>
+                    <property name="tooltip-text" translatable="yes">Undo last edit</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="selection_label">
+                    <property name="visible">True</property>
+                    <property name="hexpand">True</property>
+                    <property name="xalign">0.5</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkComboBoxText" id="zoom_combo">
+                    <property name="visible">True</property>
+                    <property name="tooltip-text" translatable="yes">Preview zoom</property>
+                    <items>
+                      <item id="fit" translatable="yes">Fit</item>
+                      <item id="0.5">50%</item>
+                      <item id="1">100%</item>
+                      <item id="1.5">150%</item>
+                      <item id="2">200%</item>
+                      <item id="4">400%</item>
+                    </items>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkBox" id="status_row">
+            <property name="no-show-all">True</property>
+            <property name="spacing">12</property>
+            <child>
+              <object class="GtkLabel" id="status_label">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes" />
+                <property name="xalign">0</property>
+                <property name="ellipsize">middle</property>
+                <property name="hexpand">True</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="open_folder_button">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Open folder</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox" id="action_bar">
+            <property name="visible">True</property>
+            <property name="spacing">8</property>
+            <property name="no-show-all">True</property>
+            <child>
+              <object class="GtkButton" id="save_button">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Save</property>
+                <property name="no-show-all">True</property>
+                <style>
+                  <class name="suggested-action" />
+                </style>
+              </object>
+              <packing>
+                <property name="pack-type">end</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="copy_button">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Copy</property>
+                <property name="no-show-all">True</property>
+              </object>
+              <packing>
+                <property name="pack-type">end</property>
+              </packing>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child type="titlebar">
+      <object class="GtkHeaderBar" id="headerbar">
+        <property name="visible">True</property>
+        <property name="title">Cannelia Capture</property>
+        <property name="show-close-button">True</property>
+        <child>
+          <object class="GtkMenuButton" id="menu_button">
+            <property name="visible">True</property>
+            <property name="tooltip-text" translatable="yes">Menu</property>
+            <child>
+              <object class="GtkImage" id="menu_icon">
+                <property name="visible">True</property>
+                <property name="icon-name">open-menu-symbolic</property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

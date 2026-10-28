@@ -1,0 +1,8 @@
+{
+  "name": "cannelia-capture",
+  "owner": "yuri-schmaltz",
+  "visibility": "public",
+  "description": "Captura de tela para Linux Mint/Cinnamon, com recorte, zoom, salvamento automático e interface pt-BR. Derivado do Cinnamon, sob GPL v2 ou posterior.",
+  "homepage": "https://github.com/yuri-schmaltz/cannelia-capture#readme",
+  "topics": ["linux", "linux-mint", "cinnamon", "screenshot", "screen-capture", "gtk3", "python", "desktop", "portuguese", "gplv2"]
+}

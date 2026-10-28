@@ -1,0 +1,12 @@
+.local-screenshot/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+*.log
+*.core
+core
+.DS_Store

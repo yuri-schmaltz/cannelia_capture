@@ -1,0 +1,209 @@
+# SPDX-License-Identifier: GPL-2.0-or-later
+# Cannelia Capture translations (C) 2026 yuri-schmaltz.
+msgid ""
+msgstr ""
+"Project-Id-Version: Cannelia Capture 0.1.0\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"PO-Revision-Date: 2026-10-28 00:00-0300\n"
+"Last-Translator: Local project\n"
+"Language-Team: Brazilian Portuguese\n"
+
+msgid "Screenshot"
+msgstr "Captura de tela"
+
+msgid "Entire screen"
+msgstr "Tela inteira"
+
+msgid "Monitor"
+msgstr "Monitor"
+
+msgid "Window"
+msgstr "Janela"
+
+msgid "Region"
+msgstr "Região"
+
+msgid "Capture all monitors"
+msgstr "Capturar todos os monitores"
+
+msgid "Capture the current monitor"
+msgstr "Capturar o monitor atual"
+
+msgid "Capture the active window"
+msgstr "Capturar a janela ativa"
+
+msgid "Capture a selected area"
+msgstr "Capturar uma região selecionada"
+
+msgid "Options"
+msgstr "Opções"
+
+msgid "Capture options"
+msgstr "Opções de captura"
+
+msgid "Capture"
+msgstr "Capturar"
+
+msgid "New capture"
+msgstr "Nova captura"
+
+msgid "What would you like to capture?"
+msgstr "O que você deseja capturar?"
+
+msgid "Ready to capture"
+msgstr "Pronto para capturar"
+
+msgid "Drag over the image to select an area"
+msgstr "Arraste sobre a imagem para selecionar uma área"
+
+msgid "Delay (seconds)"
+msgstr "Temporizador (segundos)"
+
+msgid "Include pointer"
+msgstr "Incluir ponteiro do mouse"
+
+msgid "Include window shadow"
+msgstr "Incluir sombra da janela"
+
+msgid "Crop"
+msgstr "Recortar"
+
+msgid "Undo"
+msgstr "Desfazer"
+
+msgid "Crop to selection"
+msgstr "Recortar a área selecionada"
+
+msgid "Undo last edit"
+msgstr "Desfazer a última edição"
+
+msgid "Copy"
+msgstr "Copiar"
+
+msgid "Close"
+msgstr "Fechar"
+
+msgid "Save"
+msgstr "Salvar"
+
+msgid "Save as…"
+msgstr "Salvar como…"
+
+msgid "Cancel"
+msgstr "Cancelar"
+
+msgid "Copy to clipboard"
+msgstr "Copiar para a área de transferência"
+
+msgid "Copied to clipboard"
+msgstr "Copiado para a área de transferência"
+
+msgid "Copied"
+msgstr "Copiado"
+
+#, python-format
+msgid "Saved in %(folder)s"
+msgstr "Salvo em %(folder)s"
+
+msgid "Open folder"
+msgstr "Abrir pasta"
+
+msgid "Open save folder"
+msgstr "Abrir pasta de capturas"
+
+msgid "Save Screenshot"
+msgstr "Salvar captura de tela"
+
+msgid "Failed to save screenshot"
+msgstr "Não foi possível salvar a captura"
+
+msgid "Menu"
+msgstr "Menu"
+
+msgid "Preferences"
+msgstr "Preferências"
+
+msgid "Saving"
+msgstr "Salvamento"
+
+msgid "Default save folder"
+msgstr "Pasta padrão para salvar"
+
+msgid "Default file type"
+msgstr "Formato padrão"
+
+msgid "Launch file manager after saving"
+msgstr "Abrir pasta após salvar"
+
+msgid "Behavior"
+msgstr "Comportamento"
+
+msgid "Autosave to default folder"
+msgstr "Salvar automaticamente na pasta padrão"
+
+msgid "Copy to clipboard when saving"
+msgstr "Copiar para a área de transferência ao salvar"
+
+msgid "Use a flash"
+msgstr "Usar flash"
+
+msgid "Some capture modes are unavailable."
+msgstr "Alguns modos de captura estão indisponíveis."
+
+msgid "Preview"
+msgstr "Prévia"
+
+msgid "Capture settings"
+msgstr "Captura"
+
+#, python-format
+msgid "The save folder is unavailable: %(folder)s"
+msgstr "A pasta de destino está indisponível: %(folder)s"
+
+msgid "The clipboard is unavailable."
+msgstr "A área de transferência está indisponível."
+
+msgid "The image could not be copied to the clipboard."
+msgstr "Não foi possível copiar a imagem para a área de transferência."
+
+msgid "Another capture is already in progress."
+msgstr "Já existe uma captura em andamento."
+
+msgid "The image could not be captured. Check the capture service and try again."
+msgstr "Não foi possível capturar a imagem. Verifique o serviço de captura e tente novamente."
+
+msgid "The screenshot service could not capture the image."
+msgstr "O serviço de captura não conseguiu obter a imagem."
+
+msgid "The screenshot service could not save the image."
+msgstr "O serviço de captura não conseguiu salvar a imagem."
+
+#, python-format
+msgid "Could not save the screenshot: %(error)s"
+msgstr "Não foi possível salvar a captura: %(error)s"
+
+#, python-format
+msgid "The screenshot was saved, but copying failed: %(error)s"
+msgstr "A captura foi salva, mas não foi possível copiar: %(error)s"
+
+msgid "Capture failed"
+msgstr "Falha na captura"
+
+msgid "Copy failed"
+msgstr "Falha ao copiar"
+
+msgid "Fit"
+msgstr "Ajustar"
+
+msgid "Preview zoom"
+msgstr "Zoom da prévia"
+
+msgid "About Cannelia Capture"
+msgstr "Sobre o Cannelia Capture"
+
+msgid "Screenshot tool for Linux Mint and Cinnamon."
+msgstr "Captura de tela para Linux Mint e Cinnamon."

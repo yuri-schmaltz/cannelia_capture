@@ -1,0 +1,52 @@
+<!-- Cinnamon D-Bus contract; Linux Mint, GPL-2.0-or-later. See NOTICE.md. -->
+<node>
+  <interface name="org.cinnamon.Screenshot">
+    <method name="ScreenshotArea">
+      <arg type="i" direction="in" name="x" />
+      <arg type="i" direction="in" name="y" />
+      <arg type="i" direction="in" name="width" />
+      <arg type="i" direction="in" name="height" />
+      <arg type="b" direction="in" name="include_cursor" />
+      <arg type="s" direction="in" name="filename" />
+      <arg type="b" direction="in" name="copy_to_clipboard" />
+      <arg type="b" direction="out" name="success" />
+      <arg type="s" direction="out" name="filename_used" />
+    </method>
+    <method name="ScreenshotWindow">
+      <arg type="b" direction="in" name="include_shadow" />
+      <arg type="b" direction="in" name="include_cursor" />
+      <arg type="s" direction="in" name="filename" />
+      <arg type="b" direction="in" name="copy_to_clipboard" />
+      <arg type="b" direction="out" name="success" />
+      <arg type="s" direction="out" name="filename_used" />
+    </method>
+    <method name="ScreenshotWindowById">
+      <arg type="t" direction="in" name="window_id" />
+      <arg type="b" direction="in" name="include_shadow" />
+      <arg type="b" direction="in" name="include_cursor" />
+      <arg type="s" direction="in" name="filename" />
+      <arg type="b" direction="in" name="copy_to_clipboard" />
+      <arg type="b" direction="out" name="success" />
+      <arg type="s" direction="out" name="filename_used" />
+    </method>
+    <method name="Screenshot">
+      <arg type="b" direction="in" name="include_cursor" />
+      <arg type="s" direction="in" name="filename" />
+      <arg type="b" direction="in" name="copy_to_clipboard" />
+      <arg type="b" direction="out" name="success" />
+      <arg type="s" direction="out" name="filename_used" />
+    </method>
+    <method name="SelectArea">
+      <arg type="i" direction="out" name="x" />
+      <arg type="i" direction="out" name="y" />
+      <arg type="i" direction="out" name="width" />
+      <arg type="i" direction="out" name="height" />
+    </method>
+    <method name="SelectWindow">
+      <arg type="t" direction="out" name="window_id" />
+    </method>
+    <method name="PickColor">
+      <arg type="a{sv}" direction="out" name="result" />
+    </method>
+  </interface>
+</node>
