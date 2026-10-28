@@ -49,7 +49,7 @@ def prepare():
         if not local_user_dirs.exists() or local_user_dirs.read_bytes() != content:
             local_user_dirs.write_bytes(content)
     os.environ['XDG_CONFIG_HOME'] = str(config)
-    translations = root / 'files/usr/share/cinnamon/cinnamon-screenshot/po'
+    translations = root / 'src/cannelia_capture/po'
     locale_dir = root / 'locale' if packaged else state / 'locale'
     for catalog in ([] if packaged else translations.glob('*.po')):
         output = locale_dir / catalog.stem / 'LC_MESSAGES/cinnamon-screenshot-local.mo'
@@ -63,13 +63,13 @@ def prepare():
                     subprocess.run(['msgfmt', '--check', str(catalog), '-o', str(temporary)], check=True)
                     temporary.replace(output)
     os.environ['CINNAMON_SCREENSHOT_LOCALEDIR'] = str(locale_dir)
-    sys.path.insert(0, str(root / 'files/usr/share/cinnamon/cinnamon-screenshot'))
+    sys.path.insert(0, str(root / 'src/cannelia_capture'))
 
 
 if __name__ == '__main__':
     os.environ['CINNAMON_SCREENSHOT_START_NS'] = str(time.monotonic_ns())
     if any(arg in sys.argv for arg in ('--help', '-h', '--version')):
-        sys.path.insert(0, str(Path(__file__).resolve().parent / 'files/usr/share/cinnamon/cinnamon-screenshot'))
+        sys.path.insert(0, str(Path(__file__).resolve().parent / 'src/cannelia_capture'))
         from cli import build_arg_parser
         build_arg_parser().parse_args()
         sys.exit(0)

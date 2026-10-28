@@ -1,5 +1,12 @@
 # Histórico de versões
 
+## Não lançado
+
+- Código concentrado em `src/cannelia_capture/`, sem a hierarquia do desktop Cinnamon.
+- Removidos licença duplicada, guia redundante, ícone sem uso e utilitário de
+  criação inicial do repositório; mantidos licença integral e avisos de origem.
+- Instruções de desenvolvimento e empacotamento consolidadas em CONTRIBUTING.md.
+
 ## 1.0.0 — 2026-10-28
 
 - Primeira release pública com pacote Debian independente (`Architecture: all`).

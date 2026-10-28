@@ -10,7 +10,7 @@ import subprocess
 import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = runpy.run_path(str(ROOT / 'files/usr/share/cinnamon/cinnamon-screenshot/branding.py'))['VERSION']
+VERSION = runpy.run_path(str(ROOT / 'src/cannelia_capture/branding.py'))['VERSION']
 
 
 def run(*args, **kwargs):

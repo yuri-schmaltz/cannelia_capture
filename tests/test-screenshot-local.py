@@ -293,7 +293,7 @@ class OptimizationTests(unittest.TestCase):
         from runtime import CaptureLock
         lock = CaptureLock()
         self.assertTrue(lock.acquire())
-        code = ('import sys; sys.path.insert(0, ' + repr(str(root / 'files/usr/share/cinnamon/cinnamon-screenshot')) + '); '
+        code = ('import sys; sys.path.insert(0, ' + repr(str(root / 'src/cannelia_capture')) + '); '
                 'from runtime import CaptureLock; lock=CaptureLock(); print(lock.acquire())')
         try:
             result = subprocess.check_output(['/usr/bin/python3', '-c', code], text=True)

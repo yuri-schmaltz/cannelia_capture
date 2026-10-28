@@ -291,7 +291,7 @@ apenas um pixel. Veja [CONTRIBUTING.md](CONTRIBUTING.md) para o ambiente de test
 
 - [Tudo que foi alterado](docs/CHANGES.md).
 - [Histórico de versões](CHANGELOG.md).
-- [Arquitetura e desenvolvimento](SCREENSHOT-DEVELOPMENT.md).
+- [Arquitetura e desenvolvimento](CONTRIBUTING.md).
 - [Solução de problemas](docs/TROUBLESHOOTING.md).
 - [Créditos e proveniência](NOTICE.md) e [autores](AUTHORS.md).
 - [Licença GPL v2](LICENSE), com a opção **ou qualquer versão posterior**.

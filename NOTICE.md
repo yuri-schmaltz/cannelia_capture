@@ -2,8 +2,8 @@
 
 **Cannelia Capture 1.0.0** é distribuído sob a **GNU General Public License,
 versão 2 ou, a seu critério, qualquer versão posterior** (`GPL-2.0-or-later`).
-O texto integral da GPL v2 está em [LICENSE](LICENSE) e [COPYING](COPYING).
-Esses textos não foram alterados. Não há licença MIT ou proprietária adicional.
+O texto integral da GPL v2 está em [LICENSE](LICENSE).
+Esse texto não foi alterado. Não há licença MIT ou proprietária adicional.
 
 ## Código de origem
 

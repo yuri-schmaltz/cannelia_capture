@@ -27,7 +27,7 @@ jobs:
       - name: Validate schemas and translations
         run: |
           glib-compile-schemas --strict --dry-run data
-          msgfmt --check files/usr/share/cinnamon/cinnamon-screenshot/po/pt_BR.po -o /tmp/cannelia-pt_BR.mo
+          msgfmt --check src/cannelia_capture/po/pt_BR.po -o /tmp/cannelia-pt_BR.mo
           git diff --check
       - name: Run regression tests on a virtual display
         env:

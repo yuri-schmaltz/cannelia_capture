@@ -14,7 +14,7 @@ import tempfile
 from email.utils import formatdate
 
 ROOT = Path(__file__).resolve().parent.parent
-VERSION = runpy.run_path(str(ROOT / 'files/usr/share/cinnamon/cinnamon-screenshot/branding.py'))['VERSION']
+VERSION = runpy.run_path(str(ROOT / 'src/cannelia_capture/branding.py'))['VERSION']
 
 
 def main():
@@ -30,7 +30,7 @@ def main():
         stage = Path(temporary) / 'root'
         app = stage / 'usr/share/cannelia-capture'
         app.mkdir(parents=True)
-        source = Path('files/usr/share/cinnamon/cinnamon-screenshot')
+        source = Path('src/cannelia_capture')
         shutil.copytree(ROOT / source, app / source, ignore=shutil.ignore_patterns('__pycache__', '*.pyc', 'po'))
         shutil.copy2(ROOT / 'run-screenshot.py', app / 'run-screenshot.py')
         (app / 'data').mkdir()

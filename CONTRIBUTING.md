@@ -31,14 +31,30 @@ Isso valida a GUI e as simulações de serviço, mas não comprova captura real
 em um compositor. Para validar a integração real, rode o app em Cinnamon e
 teste tela, região, janela, flash, temporizador, salvamento e cópia.
 
+## Execução e recursos
+
+`run-screenshot.py` adiciona `src/cannelia_capture/` ao caminho de módulos.
+Os módulos usam imports locais; o diretório não exige instalação via pip.
+Schemas e traduções são compilados sob demanda em `.local-screenshot/`,
+com bloqueio para impedir compilações concorrentes. `--help` e `--version`
+funcionam sem carregar GTK nem criar estado do usuário.
+
+No pacote Debian, esses recursos já estão compilados em
+`/usr/share/cannelia-capture/`; o runtime não altera os arquivos do pacote.
+Os IDs internos e os caminhos das preferências instaladas são preservados
+para manter compatibilidade com instalações anteriores.
+
 ## Estrutura
 
 | Caminho | Função |
 | --- | --- |
-| `files/usr/share/cinnamon/cinnamon-screenshot/` | Python, UI GTK, ícones, traduções e backends |
+| `src/cannelia_capture/` | Python, UI GTK, ícones, traduções e backends |
 | `data/org.cinnamon.gschema.xml` | Somente as configurações do aplicativo |
 | `run-screenshot.py` | Preparação/cache e execução local |
 | `install-screenshot.py` | Instalação por usuário, atalhos, remoção |
+| `packaging/` | Metadados Debian, ícone e página de manual |
+| `tools/build-deb.py` | Construção reproduzível do pacote |
+| `tests/test-deb.py` | Integração e reprodutibilidade do pacote |
 | `tests/test-screenshot-local.py` | Testes de regressão com imagens sintéticas |
 | `tools/benchmark-screenshot.py` | Medições usando o serviço real |
 | `upstream/org.cinnamon.Screenshot.xml` | Snapshot do contrato D-Bus de referência |
@@ -67,25 +83,24 @@ realizadas e os limites relevantes. O aplicativo ainda precisa de testes
 funcionais em Cinnamon recente e Wayland; não declare esse suporte como
 validado apenas porque um teste de contrato ou uma simulação passou.
 
-## Publicação pelo mantenedor
+## Empacotamento e release
 
-Os metadados da seção About do GitHub estão em `.github/repository.json`.
-Para revisar o alvo público, descrição, homepage e tópicos sem alterações remotas:
-
-```bash
-/usr/bin/python3 tools/publish-github.py --dry-run
-```
-
-Após os testes e um commit na branch `main`, autentique o GitHub CLI como
-`yuri-schmaltz` e publique:
+O repositório já está publicado em `yuri-schmaltz/cannelia-capture`.
+A versão do produto é definida em `src/cannelia_capture/branding.py`;
+o empacotador e o diálogo Sobre usam esse valor. Ao preparar uma versão,
+atualize também o changelog, o catálogo pt-BR e as referências de instalação.
 
 ```bash
-gh auth login --hostname github.com --git-protocol https --web
-/usr/bin/python3 tools/publish-github.py
+/usr/bin/python3 tools/build-deb.py
+/usr/bin/python3 tests/test-deb.py
 ```
 
-O script verifica o perfil, o remoto e o estado do checkout, cria o
-repositório público quando necessário, faz push sem force e configura o About.
-Nenhum token deve ser inserido no código, em arquivos versionados ou nos logs.
+O teste do pacote verifica versão, arquitetura, Lintian, builds reproduzíveis,
+recursos compilados e execução extraída sem modificar `/usr`.
+Depois dos testes, envie o commit, aguarde o CI, crie a tag correspondente e
+publique o `.deb` de `dist/` e o arquivo `SHA256SUMS` em uma release do GitHub.
+Não sobrescreva os arquivos de uma release publicada com um build diferente;
+correções posteriores devem receber uma nova versão.
+
 O arquivo LICENSE permite ao GitHub identificar a licença; NOTICE.md registra
 explicitamente a opção GPL v2 **ou posterior** e os direitos dos autores originais.

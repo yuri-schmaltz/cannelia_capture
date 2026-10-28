@@ -12,7 +12,7 @@ import shutil
 import subprocess
 
 
-APP_PATH = Path('files/usr/share/cinnamon/cinnamon-screenshot')
+APP_PATH = Path('src/cannelia_capture')
 SHORTCUTS = [('Captura: desktop inteiro', '<Super><Shift>a', ''),
              ('Captura: seleção', '<Super><Shift>s', ' --area'),
              ('Captura: janela atual', '<Super><Shift>d', ' --window')]
@@ -112,8 +112,8 @@ def install(prefix, configure_shortcuts=True, isolated=False):
                         ignore=shutil.ignore_patterns('__pycache__', '*.pyc'))
         (destination / 'data').mkdir(exist_ok=True)
         shutil.copy2(source / 'data/org.cinnamon.gschema.xml', destination / 'data/org.cinnamon.gschema.xml')
-        for filename in ('run-screenshot.py', 'install-screenshot.py', 'SCREENSHOT-DEVELOPMENT.md',
-                         'COPYING', 'LICENSE', 'NOTICE.md', 'AUTHORS.md', 'README.md'):
+        for filename in ('run-screenshot.py', 'install-screenshot.py',
+                         'LICENSE', 'NOTICE.md', 'AUTHORS.md', 'README.md'):
             shutil.copy2(source / filename, destination / filename)
     launcher.parent.mkdir(parents=True, exist_ok=True)
     launcher.write_text('#!/usr/bin/python3\nimport os, runpy\n'
