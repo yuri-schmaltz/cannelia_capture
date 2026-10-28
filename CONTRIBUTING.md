@@ -18,8 +18,10 @@ Use o Python do sistema. As preferências/cache de desenvolvimento ficam em
 `.local-screenshot/`, separadas da instalação do usuário. A suíte usa imagens
 sintéticas e um diretório de runtime temporário; não captura seu desktop.
 
-Para testar sem a sessão do Cinnamon, instale também `xvfb`, `xauth` e
-`dbus-x11`, e execute:
+Para testar sem a sessão do Cinnamon, instale também `xvfb`, `xauth`,
+`dbus-x11`, `cinnamon-desktop-data`, `librsvg2-common`, `shared-mime-info` e
+`at-spi2-core`. O pacote de dados fornece os schemas reais de atalhos usados
+pelos testes; não inicia nem substitui o desktop. Execute:
 
 ```bash
 dbus-run-session -- xvfb-run -a /usr/bin/python3 tests/test-screenshot-local.py
